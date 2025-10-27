@@ -1,0 +1,82 @@
+---
+title: "Resume"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# Ziang Niu
+
+**Email:** zn2220@cumc.columbia.edu  
+**Phone:** +1 (929) 317-8542  
+**Location:** Beijing, China / New York, USA  
+
+---
+
+## Education
+
+**Columbia University**, USA  
+*M.S. in Biostatistics (First-Year Student)*  
+
+**Beijing Normal University**, China  
+*B.S. in Mathematics and Applied Mathematics*  
+
+---
+
+## Skills
+
+- **Programming:** Python, R, Maple  
+- **Certification:** Senior High School Mathematics Teacher Qualification Certificate  
+
+---
+
+## Internships
+
+**Chinese Academy of Sciences** — *Research Intern*  
+*Beijing / Suzhou, Jul 2023 – Sep 2023*  
+- Contributed to the development and training of large language models and the construction of model deployment platforms.  
+- Conducted data collection, preprocessing, and performance evaluation of models.  
+- Proposed an innovative framework integrating BERT, Transformer, and GAN architectures, which notably enhanced system performance during the Aviation Innovation Challenge.  
+
+**China Unicom, Digital Department** — *Data Science Intern*  
+*Beijing, Jul 2024 – Aug 2024*  
+- Developed and fine-tuned LSTM models to predict user demographics (age and gender) based on behavioral data.  
+- Collaborated with the analytics team to improve model interpretability and deployment efficiency.  
+
+**Beijing National Day School / Beijing Science High School** — *Teaching Intern*  
+*Beijing, Feb 2025 – Jul 2025*  
+- Assisted in mathematics instruction, including lesson delivery, substitute teaching, and one-on-one tutoring.  
+- Designed and graded examination papers and problem sets for senior high school students.  
+- Participated in the *Beijing Science High School Weekend Camp*, contributing to question design, lesson planning, and interactive teaching sessions that emphasized mathematical reasoning and problem-solving skills.  
+
+---
+
+## Research Experience
+
+**Beijing College Student Innovation and Entrepreneurship Program — Causal Inference Project** — *Research Member*  
+*Beijing, May 2023 – May 2024*  
+- Applied front-door and back-door adjustments and Pearl’s *do*-calculus to address confounding bias in observational data.  
+- Studied causal estimation methods including randomized controlled trials (RCTs), propensity score matching, and inverse probability weighting (IPW).  
+- Utilized Microsoft’s *DoWhy* framework to estimate causal effects on the IHDP dataset.  
+- Investigated causal relationships in restaurant sales data from XiBei Catering Group to support business decision-making.  
+
+**Artificial Intelligence College, Beijing Normal University** — *Research Assistant*  
+*Beijing, Nov 2023 – May 2024*  
+- Conducted research on multi-task learning in dense prediction tasks within computer vision.  
+- Reviewed and translated academic literature, including *Multi-Task Learning for Dense Prediction Tasks: A Survey*.  
+- Implemented and analyzed depth estimation and edge detection models on NYUv2 and Pascal datasets.  
+
+**Mathematical Contest in Modeling (MCM), USA** — *Team Leader*  
+*Feb 2024*  
+- Led a three-member team to investigate the ecological effects of sex ratio variation in sea lamprey populations.  
+- Modeled species interactions using Lotka–Volterra equations and cellular automata.  
+- Designed evaluation metrics to assess model performance and ecological stability.  
+
+---
+
+## Extracurricular Activities
+
+**Beijing Normal University, School of Mathematics and Statistics Football Team** — *Vice Captain*  
+*Sep 2023 – Jun 2024*  
+- Led the team to win the 2024 “Sun Cup” University Football Championship.  
