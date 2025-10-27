@@ -5,6 +5,7 @@ output:
     code_folding: hide
     orientation: rows
     vertical_layout: fill
+    theme: journal
 runtime: shiny
 ---
 
@@ -25,7 +26,7 @@ data("instacart")
 
 # Data Wrangling
 
-Choosing the wanted data, 
+This R code transforms the instacart dataset, creating three data subsets for visualization: plot_1_data summarizes total sales by department, reordering them by volume; plot_2_data takes a 10,000-row random sample belonging only to the top 10 best-selling departments identified from the first summary; and plot_3_data drills down into the "dairy eggs" department to filter for the 10 most popular aisles based on item count.
 
 ```{r}
 plot_1_data <- instacart %>%
