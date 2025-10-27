@@ -1,0 +1,19 @@
+---
+title: "Ziang Niu's web"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cerulean
+---
+
+# Ziang Niu's web
+
+Name: Ziang Niu
+
+Gender: Male
+
+Occupation: M.S. Student in Biostatistics (First Year), Columbia University
+
+# Resume
+[Resume](resume.html)
