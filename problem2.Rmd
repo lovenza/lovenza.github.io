@@ -1,0 +1,20 @@
+---
+title: "Problem2"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(plotly)
+library(tidyverse)
+library(p8105.datasets)
+library(lubridate)
+```
+
+```{r}
+data("instacart")
+```
+
