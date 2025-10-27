@@ -26,7 +26,7 @@ data("instacart")
 
 # Data Wrangling
 
-This R code transforms the instacart dataset, creating three data subsets for visualization: plot_1_data summarizes total sales by department, reordering them by volume; plot_2_data takes a 10,000-row random sample belonging only to the top 10 best-selling departments identified from the first summary; and plot_3_data drills down into the "dairy eggs" department to filter for the 10 most popular aisles based on item count.
+This R code transforms the instacart dataset, creating three data subsets for visualization: plot_1_data summarizes total sales by department, reordering them by volume; plot_2_data takes a 10,000-row random sample belonging only to the top 10 best-selling departments identified from the first summary; and plot_3_data filters for the 'snacks' department, then aggregates the total item count by the hour of the day.
 
 ```{r}
 plot_1_data <- instacart %>%
@@ -45,11 +45,11 @@ plot_2_data <- instacart %>%
   mutate(department = factor(department, levels = top_10_depts))
 
 plot_3_data <- instacart %>%
-  filter(department == "dairy eggs") %>%
-  group_by(aisle) %>%
-  summarize(count = n()) %>%
-  top_n(10, count) %>%
-  ungroup()
+  filter(department == "snacks") %>%
+  group_by(order_hour_of_day) %>%
+  summarize(count_of_items = n()) %>%
+  ungroup() %>%
+  arrange(order_hour_of_day)
 ```
 
 # First Plot: Total Items Sold by Department
@@ -86,18 +86,22 @@ plot_ly(
   )
 ```
 
-# Third Plot: Top 10 Aisle Proportions in 'Dairy Eggs'
+# Snack Item Orders by Hour of Day
 
 ```{r}
 plot_ly(
   data = plot_3_data,
-  labels = ~aisle,
-  values = ~count,
-  type = "pie",
-  textinfo = "label+percent",
-  insidetextorientation = "radial"
-) %>% 
+  x = ~order_hour_of_day,
+  y = ~count_of_items,
+  type = "scatter",
+  mode = "lines+markers"
+) %>%
   layout(
-    title = "Top 10 Aisle Proportions in 'Dairy Eggs'"
+    title = "Snack Item Orders by Hour of Day",
+    xaxis = list(
+      title = "Hour of Day (0-23)",
+      dtick = 1 
+    ),
+    yaxis = list(title = "Number of Snack Items Ordered")
   )
 ```
