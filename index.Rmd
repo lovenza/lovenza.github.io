@@ -16,3 +16,6 @@ Occupation: M.S. Student in Biostatistics (First Year), Columbia University
 
 # Resume
 [Resume](resume.html)
+
+# HW4 Problem2
+[Problem2](problem2.html)

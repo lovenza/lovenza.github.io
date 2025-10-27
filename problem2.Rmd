@@ -2,8 +2,10 @@
 title: "Problem2"
 output: 
   flexdashboard::flex_dashboard:
+    code_folding: hide
     orientation: rows
     vertical_layout: fill
+runtime: shiny
 ---
 
 ```{r setup, include=FALSE}
@@ -11,10 +13,90 @@ library(flexdashboard)
 library(plotly)
 library(tidyverse)
 library(p8105.datasets)
-library(lubridate)
 ```
+
+# Importing data
+
+Choose the instacart data.
 
 ```{r}
-data("instacart")
+data("instacart") 
 ```
 
+# Data Wrangling
+
+Choosing the wanted data, 
+
+```{r}
+plot_1_data <- instacart %>%
+  group_by(department) %>%
+  summarize(total_sales = n()) %>%
+  mutate(department = reorder(department, total_sales))
+
+top_10_depts <- plot_1_data %>%
+  arrange(desc(total_sales)) %>%
+  slice(1:10) %>%
+  pull(department)
+
+plot_2_data <- instacart %>%
+  filter(department %in% top_10_depts) %>%
+  slice_sample(n = 10000) %>%
+  mutate(department = factor(department, levels = top_10_depts))
+
+plot_3_data <- instacart %>%
+  filter(department == "dairy eggs") %>%
+  group_by(aisle) %>%
+  summarize(count = n()) %>%
+  top_n(10, count) %>%
+  ungroup()
+```
+
+# First Plot: Total Items Sold by Department
+
+```{r}
+plot_ly(
+  data = plot_1_data,
+  y = ~department,
+  x = ~total_sales,
+  type = "bar",
+  orientation = "h"
+) %>% 
+  layout(
+    title = "Total Items Sold by Department",
+    yaxis = list(title = "Department"),
+    xaxis = list(title = "Total Items Sold")
+  )
+```
+
+# Second Plot: Order Hour Distribution (Top 10 Depts)
+
+```{r}
+plot_ly(
+  data = plot_2_data,
+  x = ~department,
+  y = ~order_hour_of_day, 
+  type = "box",
+  name = "Order Hour Distribution"
+) %>% 
+  layout(
+    title = "Order Hour Distribution (Top 10 Depts)",
+    xaxis = list(title = "Department"),
+    yaxis = list(title = "Hour of Day (0-23)")
+  )
+```
+
+# Third Plot: Top 10 Aisle Proportions in 'Dairy Eggs'
+
+```{r}
+plot_ly(
+  data = plot_3_data,
+  labels = ~aisle,
+  values = ~count,
+  type = "pie",
+  textinfo = "label+percent",
+  insidetextorientation = "radial"
+) %>% 
+  layout(
+    title = "Top 10 Aisle Proportions in 'Dairy Eggs'"
+  )
+```
