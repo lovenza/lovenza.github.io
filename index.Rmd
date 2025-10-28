@@ -19,3 +19,6 @@ Occupation: M.S. Student in Biostatistics (First Year), Columbia University
 
 # HW4 Problem2
 [Problem2](problem2.html)
+
+## Problem2 in one dashboard
+[Problem2 in one dashboard](problem2inonedashboard.html)
