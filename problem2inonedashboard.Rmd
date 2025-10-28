@@ -6,6 +6,8 @@ output:
     theme: journal
 ---
 
+<a href="index.html" class="btn btn-primary">⬅ Back to Home</a>
+
 ```{r setup, include=FALSE}
 # Load all required packages
 library(flexdashboard)

@@ -2,9 +2,10 @@
 title: "Problem2"
 output: 
   flexdashboard::flex_dashboard:
-    code_folding: hide
     theme: journal
 ---
+
+<a href="index.html" class="btn btn-primary">⬅ Back to Home</a>
 
 ```{r setup, include=FALSE}
 library(flexdashboard)
